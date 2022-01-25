@@ -64,9 +64,7 @@ body {
   width: 100%;
 }
 
-.rating-container-1,
-.rating-container-2,
-.rating-container-3 {
+.rating-container {
   background-color: var(--light-grayish-magenta);
   border-radius: 5px;
   display: flex;
@@ -77,9 +75,7 @@ body {
   text-align: center;
 }
 
-.rating-container-1 p,
-.rating-container-2 p,
-.rating-container-3 p {
+.rating-container p {
   color: var(--dark-magenta);
   font-weight: 700;
   font-size: 13px;
@@ -98,7 +94,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: auto;
   padding: 7px;
 }
 
@@ -107,16 +102,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.9rem;
-  height: auto;
 }
-.buyer-container-1,
-.buyer-container-2,
-.buyer-container-3 {
+
+.buyer-container {
   background-color: var(--dark-magenta);
   border-radius: 5px;
   padding: 1.8rem;
-  height: fit-content;
-  width: fit-content;
 }
 
 /** Ratings Header **/
@@ -127,41 +118,25 @@ body {
   align-items: center;
 }
 
-.buyer-one {
-  background-image: url("images/image-colton.jpg");
-}
-.buyer-two {
-  background-image: url("images/image-irene.jpg");
-}
-.buyer-three {
-  background-image: url("images/image-anne.jpg");
-}
-
-.buyer-one,
-.buyer-two,
-.buyer-three {
-  background-repeat: no-repeat;
-  background-size: cover;
+.buyer-icon img {
   width: 2.5rem;
-  height: 2.5rem;
   border-radius: 50%;
 }
 
-.buyer-information {
-  line-height: 10px;
-}
+.buyer-information { line-height: 10px; }
 
 .buyer-name {
   color: var(--white);
   font-size: 12px;
   font-weight: 700;
 }
+
 .buyer-verification {
   color: var(--soft-pink);
   font-size: 14px;
 }
 
-.buyer-feedback p {
+.buyer-feedback {
   color: var(--light-grayish-magenta);
   font-weight: 400;
   line-height: 1.5rem;
@@ -169,66 +144,41 @@ body {
 }
 
 /** Media Queries **/
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
   body {
     background-position: left 100px top -100px, right 0 bottom -500px;
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media (min-width: 1025px) {
   body {
     background-image: url("images/bg-pattern-top-desktop.svg"),
       url("images/bg-pattern-bottom-desktop.svg");
     background-position: left -800px top 0, right -250px bottom 0;
   }
-  .main-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      "first-area second-area"
-      "third-area third-area";
-  }
-  .main-title > * {
-    text-align: left;
-  }
-  h1 {
-    width: 80%;
-  }
-  .main-title p {
-    width: 85%;
-  }
-  .ratings {
-    align-items: left;
-    padding: 1rem;
-  }
 
-  .rating-info {
-    width: 85%;
-  }
+  .main-container { grid-template-columns: repeat(2, 1fr); }
 
-  .rating-container-2 {
-    margin-left: 3rem;
-  }
-  .rating-container-3 {
-    margin-left: 6rem;
-  }
+  .main-title > * { text-align: left; }
+  .main-title h1 { width: 80%; }
+  .main-title p { width: 85%; }
 
-  .rating-container-1,
-  .rating-container-2,
-  .rating-container-3 {
-    text-align: left;
+  .ratings { padding: 1rem; }
+  .rating-info { width: 85%; }
+  .rating-container-2 { margin-left: 3rem; }
+  .rating-container-3 { margin-left: 6rem; }
+
+  .rating-container {
     width: 100%;
     flex-direction: row;
     gap: 2rem;
   }
 
   .buyer-ratings {
+    grid-column: 1 / -1;
     flex-direction: row;
   }
-  .buyer-container-2 {
-    margin-top: 1rem;
-  }
-  .buyer-container-3 {
-    margin-top: 2rem;
-  }
+
+  .buyer-container-2 { margin: 1rem 0 -1rem; }
+  .buyer-container-3 { margin: 2rem 0 -2rem; }
 }
