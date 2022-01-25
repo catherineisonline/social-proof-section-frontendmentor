@@ -9,6 +9,14 @@
   --body-font: "Spartan", sans-serif;
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html { font-size: 15px; }
+
 body {
   background-image: url("images/bg-pattern-top-mobile.svg"),
     url("images/bg-pattern-bottom-mobile.svg");
@@ -17,42 +25,31 @@ body {
   background-attachment: fixed, fixed;
   background-size: contain, contain;
   background-color: var(--white);
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-size: 15px;
   font-family: var(--body-font);
 }
 
 .main-container {
   width: 80%;
   max-width: 69.375rem;
-  min-width: 20rem;
-  height: auto;
   margin: 0 auto;
   margin-top: 8.125rem;
   margin-bottom: 8rem;
   display: grid;
-  grid-template-columns: 1fr;
   row-gap: 2.2rem;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-    "first-area"
-    "second-area"
-    "third-area";
 }
 
 /** Main Title **/
-.main-title {
-  grid-area: first-area;
-  text-align: center;
-}
+.main-title { text-align: center; }
+
 .main-title h1 {
   color: var(--dark-magenta);
   font-size: 2.9rem;
   margin: 0;
   line-height: 3rem;
 }
+
 .main-title p {
   color: var(--dark-grayish-magenta);
   line-height: 1.5rem;
@@ -61,7 +58,6 @@ body {
 
 /** Ratings **/
 .ratings {
-  grid-area: second-area;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -108,7 +104,6 @@ body {
 
 /** Buyer Ratings **/
 .buyer-ratings {
-  grid-area: third-area;
   display: flex;
   flex-direction: column;
   gap: 1.9rem;
